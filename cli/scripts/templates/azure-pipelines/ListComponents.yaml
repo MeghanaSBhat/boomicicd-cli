@@ -24,7 +24,7 @@ steps:
 - script: |
     # ... (existing script)
 
-    source ./bin/publishPackagedComponentMetadata.sh \
+    source bin/publishPackagedComponentMetadata.sh \
       packageIds="${{ parameters.packageIds }}" \
       listenerStatus=${{ parameters.listenerStatus }}
     
