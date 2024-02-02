@@ -6,23 +6,21 @@
 # How do I allow non-mandatory params
 # How do I pass params from external input
 parameters:
- - name: listenerStatus
-  type: string
-  default: 'RUNNING'
+  - name: listenerStatus
+    type: string
+    default: 'RUNNING'
 
 variables:
-- group: boomicicd
+  - group: boomicicd
 
 pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: |
-    # Don't have to do this if the image comes preloaded with this package
-    sudo apt-get install -y libxml2-utils
-    cd cli/scripts
+  - script: |
+      # Don't have to do this if the image comes preloaded with this package
+      sudo apt-get install -y libxml2-utils
+      cd cli/scripts
 
-    source /bin/publishAllEnvironments.sh
-      
-    
+      source /bin/publishAllEnvironments.sh
   displayName: 'List Environments'
